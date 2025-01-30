@@ -1,0 +1,40 @@
+{
+  "game_consoles": [
+    {
+      "image": "../static/images/microsoft-xbox.jpeg",
+      "alt": "Microsoft Xbox Series S Image",
+      "name": "PlayMaster X1",
+      "description": "A next-gen gaming console with ultra-fast load times, 4K gaming support, and a vast library of exclusive titles for immersive experiences."
+    },
+    {
+      "image": "../static/images/hyperkin-retron.jpeg",
+      "alt": "Hyperkin Retron 5 HD Image",
+      "name": "ArcadePro 5000",
+      "description": "A retro-inspired console that lets players enjoy classic arcade games with modern enhancements like online leaderboards and multiplayer support."
+    },
+    {
+      "image": "../static/images/nes-console.jpeg",
+      "alt": "NES Console 8-Bit Image",
+      "name": "InfinityStation 4K",
+      "description": "An all-in-one entertainment system offering 4K resolution, VR compatibility, and access to streaming services, making it perfect for both gamers and media enthusiasts."
+    },
+    {
+      "image": "../static/images/nintendo-switch.jpeg",
+      "alt": "Nintendo Switch Image",
+      "name": "ThunderBox Mini",
+      "description": "A compact portable console designed for on-the-go gaming, featuring cloud storage and an extensive library of indie games and casual titles."
+    },
+    {
+      "image": "../static/images/super-retro.jpeg",
+      "alt": "Super Retro Trio Plus Image",
+      "name": "NeoCube Pro",
+      "description": "A powerful hybrid console that blends handheld and home gaming, allowing seamless switching between console mode and portable play with a robust game catalog."
+    },
+    {
+      "image": "../static/images/sony-playstation-5.jpeg",
+      "alt": "Sony PlayStation 5 Pro Console Image",
+      "name": "X-Play 300",
+      "description": "A budget-friendly console with great performance for casual gamers, featuring a selection of popular titles and easy-to-use family-friendly controls."
+    }
+  ]
+}

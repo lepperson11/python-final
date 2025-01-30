@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ComPlay</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css')}}"
+    />
+  </head>
+  <body>
+    <div class="container-fluid header">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
+        <a
+          href="/"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-motherboard-fill text-light ms-4"
+            viewBox="0 0 16 16"
+          >
+            <path d="M5 7h3V4H5z" />
+            <path
+              d="M1 2a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-2H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 9H1V8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6H1V5H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 2zm11 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0zm2 0a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0zM3.5 10a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zM4 4h-.5a.5.5 0 0 0 0 1H4v1h-.5a.5.5 0 0 0 0 1H4a1 1 0 0 0 1 1v.5a.5.5 0 0 0 1 0V8h1v.5a.5.5 0 0 0 1 0V8a1 1 0 0 0 1-1h.5a.5.5 0 0 0 0-1H9V5h.5a.5.5 0 0 0 0-1H9a1 1 0 0 0-1-1v-.5a.5.5 0 0 0-1 0V3H6v-.5a.5.5 0 0 0-1 0V3a1 1 0 0 0-1 1m7 7.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 0-.5.5"
+            />
+          </svg>
+          <span class="fs-4 text-light ps-2">ComPlay</span>
+        </a>
+
+        <ul class="nav nav-pills col-8">
+          <li class="nav-item col-2">
+            <a href="/" class="nav-link" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item col-2">
+            <a href="/games" class="nav-link">Games</a>
+          </li>
+          <li class="nav-item col-2">
+            <a href="/consoles" class="nav-link">Consoles</a>
+          </li>
+          <li class="nav-item col-2">
+            <a href="/accessories" class="nav-link">Accessories</a>
+          </li>
+          <li class="nav-item col-2">
+            <a href="/computers" class="nav-link">Computers</a>
+          </li>
+          <li class="nav-item col-2">
+            <a href="/monitors" class="nav-link">Monitors</a>
+          </li>
+        </ul>
+      </header>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    {% block content %} {% endblock %}
+  </body>
+  <footer>
+    <div class="container">
+      <footer class="py-3">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="/" class="nav-link px-2">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/games" class="nav-link px-2">Games</a>
+          </li>
+          <li class="nav-item">
+            <a href="/consoles" class="nav-link px-2">Consoles</a>
+          </li>
+          <li class="nav-item">
+            <a href="/accessories" class="nav-link px-2">Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a href="/computers" class="nav-link px-2">Computers</a>
+          </li>
+          <li class="nav-item">
+            <a href="/monitors" class="nav-link px-2">Monitors</a>
+          </li>
+        </ul>
+        <p class="text-center text-light">© 2025 ComPlay</p>
+      </footer>
+    </div>
+  </footer>
+</html>

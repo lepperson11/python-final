@@ -1,0 +1,40 @@
+{
+  "video_games": [
+    {
+      "image": "../static/images/dragon-age.jpeg",
+      "alt": "Dragon Age:The Veilguard PS5 Image",
+      "name": "Shadow's Edge",
+      "description": "A dark fantasy RPG where you control a rogue assassin navigating a war-torn kingdom, facing treacherous enemies and tough moral choices."
+    },
+    {
+      "image": "../static/images/super-smash-bros.jpeg",
+      "alt": "Super Smash Bros Image",
+      "name": "Galactic Odyssey",
+      "description": "A space exploration adventure game where players traverse distant planets, uncover hidden civilizations, and battle intergalactic foes."
+    },
+    {
+      "image": "../static/images/mario-kart-8.jpeg",
+      "alt": "Mario Kart 8 Image",
+      "name": "Battlezone Royale",
+      "description": "A fast-paced battle royale game set in a futuristic arena, where players fight for survival using advanced weapons and strategic tactics."
+    },
+    {
+      "image": "../static/images/the-legend-of-zelda.jpeg",
+      "alt": "The Legend Of Zelda Image",
+      "name": "Mystic Forest",
+      "description": "An enchanting puzzle-platformer where you solve ancient riddles in a magical forest, uncovering secrets of lost civilizations."
+    },
+    {
+      "image": "../static/images/super-mario-party.jpeg",
+      "alt": "Super Mario Party Jamboree Image",
+      "name": "Warrior's Legacy",
+      "description": "A multiplayer medieval combat game that combines strategic warfare with intense swordplay, set in a kingdom on the brink of collapse."
+    },
+    {
+      "image": "../static/images/mario-&-luigi.jpeg",
+      "alt": "Mario & Luigi: Brothership Image",
+      "name": "Neon Racer X",
+      "description": "A high-speed futuristic racing game featuring neon-lit streets, gravity-defying vehicles, and adrenaline-pumping tracks."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "monitors": [
+    {
+      "image": "../static/images/asus-vg249q3r.jpeg",
+      "alt": "ASUS Monitor Image",
+      "name": "UltraView 27X",
+      "description": "A 27-inch 4K monitor with vibrant color accuracy, perfect for content creators and professionals working with high-resolution media."
+    },
+    {
+      "image": "../static/images/acer-nitro-vgm270.jpeg",
+      "alt": "Acer Nitro Monitor Image",
+      "name": "PixelPro 32Q",
+      "description": "A 32-inch curved QHD monitor that offers an immersive experience for gamers and multitaskers, with a 165Hz refresh rate and ultra-low latency."
+    },
+    {
+      "image": "../static/images/acer-16pm1q.jpeg",
+      "alt": "Acer Monitor Image",
+      "name": "ClearVision 24S",
+      "description": "A compact 24-inch IPS monitor with Full HD resolution, delivering sharp text and vivid colors for office work and casual use."
+    },
+    {
+      "image": "../static/images/acer-22cv1q.jpeg",
+      "alt": "Acer Monitor Image",
+      "name": "VisionMaster 49",
+      "description": "A massive 49-inch ultrawide monitor, designed for multitasking and cinematic experiences, featuring a 32:9 aspect ratio and HDR support."
+    },
+    {
+      "image": "../static/images/lg-32up83a.jpeg",
+      "alt": "LG Monitor Image",
+      "name": "StreamFlex 144",
+      "description": "A 144Hz 27-inch gaming monitor with G-Sync technology, providing smooth and tear-free gameplay for competitive gamers."
+    },
+    {
+      "image": "../static/images/lg-monitor.jpg",
+      "alt": "LG Monitor Image",
+      "name": "EcoScreen 21",
+      "description": "A 21-inch eco-friendly monitor with energy-efficient LED backlighting and reduced blue light, ideal for prolonged use without strain on the eyes."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "accessories": [
+    {
+      "image": "../static/images/logitech-g-pro.jpeg",
+      "alt": "Logitech G Pro Mouse Image",
+      "name": "SwiftGlide Pro",
+      "description": "A high-precision gaming mouse with customizable DPI settings, ergonomic design, and RGB lighting for an enhanced gaming experience."
+    },
+    {
+      "image": "../static/images/logitech-g-g305.jpeg",
+      "alt": "Logitech G G305 Mouse Image",
+      "name": "ErgoMouse X",
+      "description": "An ergonomic wireless mouse designed for long hours of use, featuring a contoured shape and advanced tracking for smooth performance."
+    },
+    {
+      "image": "../static/images/keychron-v1.jpeg",
+      "alt": "Keychron Keyboard Image",
+      "name": "KeyMaster 3000",
+      "description": "A mechanical keyboard with customizable RGB backlighting, tactile key switches, and programmable macros for gamers and productivity enthusiasts."
+    },
+    {
+      "image": "../static/images/corsair-k70.jpeg",
+      "alt": "Corsair K70 Keyboard Image",
+      "name": "QuietType Pro",
+      "description": "A slim and quiet membrane keyboard designed for office use, featuring low-profile keys and a minimalist design for comfortable typing."
+    },
+    {
+      "image": "../static/images/anker-soundcore.jpeg",
+      "alt": "Anker Soundcore Q20i Headset Image",
+      "name": "AudioFlex 7.1",
+      "description": "A surround sound gaming headset with noise-canceling microphones, plush ear cushions, and 7.1 audio for immersive sound during gaming sessions."
+    },
+    {
+      "image": "../static/images/sony-wh-ch720n.jpeg",
+      "alt": "Sony Headset Image",
+      "name": "SoundWave Ultra",
+      "description": "A premium wireless headset with crystal-clear sound quality, long battery life, and a comfortable, adjustable headband for all-day listening."
+    }
+  ]
+}

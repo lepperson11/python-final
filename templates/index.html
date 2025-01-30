@@ -1,0 +1,150 @@
+{% extends "base.html" %} {% block content %}
+<section class="computer-section">
+  <div class="px-4 py-5 my-5 text-center">
+    <img
+      class="d-block mx-auto mb-4"
+      src="../static/images/acer-nitro.jpg"
+      alt="Gaming Computer Image"
+      height="200"
+    />
+    <h1 class="display-5 fw-bold text-body-emphasis">Gaming Computers</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">
+        Get the most powerful gaming computers for the most beautiful results,
+        play any games you want!
+      </p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="/computers">
+          <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
+            View Our Computers
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="featured-section">
+  <div class="container px-4 py-5" id="hanging-icons">
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div
+          class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            class="bi bi-joystick bg-light"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2"
+            />
+            <path
+              d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23"
+            />
+          </svg>
+        </div>
+        <div>
+          <h3 class="fs-2 text-body-emphasis">Games</h3>
+          <p>
+            We have games for Xbox, Playstation, PC and the Switch. Come look
+            all of the amazing options and deals we have!
+          </p>
+          <a href="/games" class="btn btn-primary"> Check Out The Games </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div
+          class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            class="bi bi-pc-horizontal bg-light"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M1 6a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1zm11.5 1a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1m2 0a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1M1 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5M1.25 9h5.5a.25.25 0 0 1 0 .5h-5.5a.25.25 0 0 1 0-.5"
+            />
+          </svg>
+        </div>
+        <div>
+          <h3 class="fs-2 text-body-emphasis">Consoles</h3>
+          <p>
+            Take a look at all the consoles we offer from the Xbox and
+            Playstation to the Switch, check out our amazing offers!
+          </p>
+          <a href="/consoles" class="btn btn-primary"> View The Consoles </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div
+          class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            class="bi bi-controller bg-light"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1z"
+            />
+            <path
+              d="M3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .62.39c.655-.079 1.35-.117 2.043-.117.72 0 1.443.041 2.12.126a.5.5 0 0 1 .622-.399l1.932.518a.5.5 0 0 1 .306.729q.211.136.373.297c.408.408.78 1.05 1.095 1.772.32.733.599 1.591.805 2.466s.34 1.78.364 2.606c.024.816-.059 1.602-.328 2.21a1.42 1.42 0 0 1-1.445.83c-.636-.067-1.115-.394-1.513-.773-.245-.232-.496-.526-.739-.808-.126-.148-.25-.292-.368-.423-.728-.804-1.597-1.527-3.224-1.527s-2.496.723-3.224 1.527c-.119.131-.242.275-.368.423-.243.282-.494.575-.739.808-.398.38-.877.706-1.513.773a1.42 1.42 0 0 1-1.445-.83c-.27-.608-.352-1.395-.329-2.21.024-.826.16-1.73.365-2.606.206-.875.486-1.733.805-2.466.315-.722.687-1.364 1.094-1.772a2.3 2.3 0 0 1 .433-.335l-.028-.079zm2.036.412c-.877.185-1.469.443-1.733.708-.276.276-.587.783-.885 1.465a14 14 0 0 0-.748 2.295 12.4 12.4 0 0 0-.339 2.406c-.022.755.062 1.368.243 1.776a.42.42 0 0 0 .426.24c.327-.034.61-.199.929-.502.212-.202.4-.423.615-.674.133-.156.276-.323.44-.504C4.861 9.969 5.978 9.027 8 9.027s3.139.942 3.965 1.855c.164.181.307.348.44.504.214.251.403.472.615.674.318.303.601.468.929.503a.42.42 0 0 0 .426-.241c.18-.408.265-1.02.243-1.776a12.4 12.4 0 0 0-.339-2.406 14 14 0 0 0-.748-2.295c-.298-.682-.61-1.19-.885-1.465-.264-.265-.856-.523-1.733-.708-.85-.179-1.877-.27-2.913-.27s-2.063.091-2.913.27"
+            />
+          </svg>
+        </div>
+        <div>
+          <h3 class="fs-2 text-body-emphasis">Accessories</h3>
+          <p>
+            We offer many options when it comes to accessories such as
+            controlles, mice, keyboards and even headphones!
+          </p>
+          <a href="/accessories" class="btn btn-primary"> Take A Look Here </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="monitor-section">
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img
+          src="../static/images/lg-monitor.jpg"
+          class="d-block mx-lg-auto img-fluid"
+          alt="LG Monitor Image"
+          width="700"
+          height="500"
+          loading="lazy"
+        />
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+          High Perfomance Monitors
+        </h1>
+        <p class="lead">
+          Here you can find all types of monitors, from something basic for
+          daily use all the way to the highest end esports capable monitors that
+          offer the lowest input times and highest refresh rates possible.
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a href="/monitors">
+            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">
+              See All Of Our Monitors
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
