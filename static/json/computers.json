@@ -1,42 +1,36 @@
 {
   "computers": [
     {
-      "computerId": 1,
       "image": "../static/images/acer-nitro.jpg",
       "alt": "Acer Nitro Image",
       "name": "XenoPro 3000",
       "description": "A high-performance gaming PC with top-tier graphics and cooling systems for intense gameplay."
     },
     {
-      "computerId": 2,
       "image": "../static/images/msi-aegis.jpeg",
       "alt": "MSI Aegis Image",
       "name": "EliteBook 15",
       "description": "A premium business laptop with a sleek design, powerful processors, and long battery life."
     },
     {
-      "computerId": 3,
       "image": "../static/images/ibuypower-slate.jpeg",
       "alt": "IBuyPower Slate Image",
       "name": "PixelStation 4",
       "description": "An all-in-one workstation designed for creative professionals, offering robust design and video editing capabilities."
     },
     {
-      "computerId": 4,
       "image": "../static/images/powerspec-g447.jpeg",
       "alt": "PowerSpec G447 Image",
       "name": "QuantumMini",
       "description": "A compact desktop computer with the latest processors, ideal for users needing portability without sacrificing power."
     },
     {
-      "computerId": 5,
       "image": "../static/images/powerspec-g235.jpeg",
       "alt": "PowerSpec G235 Image",
       "name": "NovaNet 500",
       "description": "A server-grade machine designed for cloud computing, with scalable storage and network optimization."
     },
     {
-      "computerId": 6,
       "image": "../static/images/powerspec-g521.jpeg",
       "alt": "PowerSpec G521 Image",
       "name": "EcoTab 10",
