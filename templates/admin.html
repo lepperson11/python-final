@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for i in range(count) %}
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="{{ image_list[i] }}" alt="{{ alt_list[i] }}" />
+        <div class="card-body">
+          <h2 class="card-title">{{ name_list[i] }}</h2>
+          <p class="card-text">{{ description_list[i] }}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group d-flex">
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-success bg-success text-dark"
+              >
+                Add To Cart
+              </button>
+            </div>
+            <div class="btn-group d-flex">
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-edit bg-warning text-dark"
+              >
+                Edit
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-danger bg-danger text-dark"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

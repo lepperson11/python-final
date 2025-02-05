@@ -1,0 +1,194 @@
+{
+  "products": {
+    "accessories": [
+      {
+        "image": "../static/images/logitech-g-pro.jpeg",
+        "alt": "Logitech G Pro Mouse Image",
+        "name": "SwiftGlide Pro",
+        "description": "A high-precision gaming mouse with customizable DPI settings, ergonomic design, and RGB lighting for an enhanced gaming experience."
+      },
+      {
+        "image": "../static/images/logitech-g-g305.jpeg",
+        "alt": "Logitech G G305 Mouse Image",
+        "name": "ErgoMouse X",
+        "description": "An ergonomic wireless mouse designed for long hours of use, featuring a contoured shape and advanced tracking for smooth performance."
+      },
+      {
+        "image": "../static/images/keychron-v1.jpeg",
+        "alt": "Keychron Keyboard Image",
+        "name": "KeyMaster 3000",
+        "description": "A mechanical keyboard with customizable RGB backlighting, tactile key switches, and programmable macros for gamers and productivity enthusiasts."
+      },
+      {
+        "image": "../static/images/corsair-k70.jpeg",
+        "alt": "Corsair K70 Keyboard Image",
+        "name": "QuietType Pro",
+        "description": "A slim and quiet membrane keyboard designed for office use, featuring low-profile keys and a minimalist design for comfortable typing."
+      },
+      {
+        "image": "../static/images/anker-soundcore.jpeg",
+        "alt": "Anker Soundcore Q20i Headset Image",
+        "name": "AudioFlex 7.1",
+        "description": "A surround sound gaming headset with noise-canceling microphones, plush ear cushions, and 7.1 audio for immersive sound during gaming sessions."
+      },
+      {
+        "image": "../static/images/sony-wh-ch720n.jpeg",
+        "alt": "Sony Headset Image",
+        "name": "SoundWave Ultra",
+        "description": "A premium wireless headset with crystal-clear sound quality, long battery life, and a comfortable, adjustable headband for all-day listening."
+      }
+    ],
+    "game_consoles": [
+      {
+        "image": "../static/images/microsoft-xbox.jpeg",
+        "alt": "Microsoft Xbox Series S Image",
+        "name": "PlayMaster X1",
+        "description": "A next-gen gaming console with ultra-fast load times, 4K gaming support, and a vast library of exclusive titles for immersive experiences."
+      },
+      {
+        "image": "../static/images/hyperkin-retron.jpeg",
+        "alt": "Hyperkin Retron 5 HD Image",
+        "name": "ArcadePro 5000",
+        "description": "A retro-inspired console that lets players enjoy classic arcade games with modern enhancements like online leaderboards and multiplayer support."
+      },
+      {
+        "image": "../static/images/nes-console.jpeg",
+        "alt": "NES Console 8-Bit Image",
+        "name": "InfinityStation 4K",
+        "description": "An all-in-one entertainment system offering 4K resolution, VR compatibility, and access to streaming services, making it perfect for both gamers and media enthusiasts."
+      },
+      {
+        "image": "../static/images/nintendo-switch.jpeg",
+        "alt": "Nintendo Switch Image",
+        "name": "ThunderBox Mini",
+        "description": "A compact portable console designed for on-the-go gaming, featuring cloud storage and an extensive library of indie games and casual titles."
+      },
+      {
+        "image": "../static/images/super-retro.jpeg",
+        "alt": "Super Retro Trio Plus Image",
+        "name": "NeoCube Pro",
+        "description": "A powerful hybrid console that blends handheld and home gaming, allowing seamless switching between console mode and portable play with a robust game catalog."
+      },
+      {
+        "image": "../static/images/sony-playstation-5.jpeg",
+        "alt": "Sony PlayStation 5 Pro Console Image",
+        "name": "X-Play 300",
+        "description": "A budget-friendly console with great performance for casual gamers, featuring a selection of popular titles and easy-to-use family-friendly controls."
+      }
+    ],
+    "computers": [
+      {
+        "image": "../static/images/acer-nitro.jpg",
+        "alt": "Acer Nitro Image",
+        "name": "XenoPro 3000",
+        "description": "A high-performance gaming PC with top-tier graphics and cooling systems for intense gameplay."
+      },
+      {
+        "image": "../static/images/msi-aegis.jpeg",
+        "alt": "MSI Aegis Image",
+        "name": "EliteBook 15",
+        "description": "A premium business laptop with a sleek design, powerful processors, and long battery life."
+      },
+      {
+        "image": "../static/images/ibuypower-slate.jpeg",
+        "alt": "IBuyPower Slate Image",
+        "name": "PixelStation 4",
+        "description": "An all-in-one workstation designed for creative professionals, offering robust design and video editing capabilities."
+      },
+      {
+        "image": "../static/images/powerspec-g447.jpeg",
+        "alt": "PowerSpec G447 Image",
+        "name": "QuantumMini",
+        "description": "A compact desktop computer with the latest processors, ideal for users needing portability without sacrificing power."
+      },
+      {
+        "image": "../static/images/powerspec-g235.jpeg",
+        "alt": "PowerSpec G235 Image",
+        "name": "NovaNet 500",
+        "description": "A server-grade machine designed for cloud computing, with scalable storage and network optimization."
+      },
+      {
+        "image": "../static/images/powerspec-g521.jpeg",
+        "alt": "PowerSpec G521 Image",
+        "name": "EcoTab 10",
+        "description": "An eco-friendly tablet designed for reading, browsing, and light productivity, featuring an energy-efficient screen."
+      }
+    ],
+    "video_games": [
+      {
+        "image": "../static/images/dragon-age.jpeg",
+        "alt": "Dragon Age:The Veilguard PS5 Image",
+        "name": "Shadow's Edge",
+        "description": "A dark fantasy RPG where you control a rogue assassin navigating a war-torn kingdom, facing treacherous enemies and tough moral choices."
+      },
+      {
+        "image": "../static/images/super-smash-bros.jpeg",
+        "alt": "Super Smash Bros Image",
+        "name": "Galactic Odyssey",
+        "description": "A space exploration adventure game where players traverse distant planets, uncover hidden civilizations, and battle intergalactic foes."
+      },
+      {
+        "image": "../static/images/mario-kart-8.jpeg",
+        "alt": "Mario Kart 8 Image",
+        "name": "Battlezone Royale",
+        "description": "A fast-paced battle royale game set in a futuristic arena, where players fight for survival using advanced weapons and strategic tactics."
+      },
+      {
+        "image": "../static/images/the-legend-of-zelda.jpeg",
+        "alt": "The Legend Of Zelda Image",
+        "name": "Mystic Forest",
+        "description": "An enchanting puzzle-platformer where you solve ancient riddles in a magical forest, uncovering secrets of lost civilizations."
+      },
+      {
+        "image": "../static/images/super-mario-party.jpeg",
+        "alt": "Super Mario Party Jamboree Image",
+        "name": "Warrior's Legacy",
+        "description": "A multiplayer medieval combat game that combines strategic warfare with intense swordplay, set in a kingdom on the brink of collapse."
+      },
+      {
+        "image": "../static/images/mario-&-luigi.jpeg",
+        "alt": "Mario & Luigi: Brothership Image",
+        "name": "Neon Racer X",
+        "description": "A high-speed futuristic racing game featuring neon-lit streets, gravity-defying vehicles, and adrenaline-pumping tracks."
+      }
+    ],
+    "monitors": [
+      {
+        "image": "../static/images/asus-vg249q3r.jpeg",
+        "alt": "ASUS Monitor Image",
+        "name": "UltraView 27X",
+        "description": "A 27-inch 4K monitor with vibrant color accuracy, perfect for content creators and professionals working with high-resolution media."
+      },
+      {
+        "image": "../static/images/acer-nitro-vgm270.jpeg",
+        "alt": "Acer Nitro Monitor Image",
+        "name": "PixelPro 32Q",
+        "description": "A 32-inch curved QHD monitor that offers an immersive experience for gamers and multitaskers, with a 165Hz refresh rate and ultra-low latency."
+      },
+      {
+        "image": "../static/images/acer-16pm1q.jpeg",
+        "alt": "Acer Monitor Image",
+        "name": "ClearVision 24S",
+        "description": "A compact 24-inch IPS monitor with Full HD resolution, delivering sharp text and vivid colors for office work and casual use."
+      },
+      {
+        "image": "../static/images/acer-22cv1q.jpeg",
+        "alt": "Acer Monitor Image",
+        "name": "VisionMaster 49",
+        "description": "A massive 49-inch ultrawide monitor, designed for multitasking and cinematic experiences, featuring a 32:9 aspect ratio and HDR support."
+      },
+      {
+        "image": "../static/images/lg-32up83a.jpeg",
+        "alt": "LG Monitor Image",
+        "name": "StreamFlex 144",
+        "description": "A 144Hz 27-inch gaming monitor with G-Sync technology, providing smooth and tear-free gameplay for competitive gamers."
+      },
+      {
+        "image": "../static/images/lg-monitor.jpg",
+        "alt": "LG Monitor Image",
+        "name": "EcoScreen 21",
+        "description": "A 21-inch eco-friendly monitor with energy-efficient LED backlighting and reduced blue light, ideal for prolonged use without strain on the eyes."
+      }
+    ]
+  }
+}

@@ -3,5 +3,11 @@ footer {
   background-color: #36322e;
 }
 .nav-link {
-  color: #4590a1;
+  color: rgb(13, 110, 253);
+}
+.sign-in {
+  height: 75vh;
+}
+.flash {
+  color: red;
 }
