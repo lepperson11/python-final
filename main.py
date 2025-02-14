@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect, flash, session
+from flask import Flask, render_template, request, url_for, redirect, session
 import json
 from pymongo import MongoClient
 import bcrypt
@@ -10,13 +10,15 @@ load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRETKEY')
-# app.config['MONGO_URI'] = os.getenv('MONGODB_URI')
-# mongo = PyMongo(app,tlsCAFile=certifi.where())
-# records = mongo.db.pythonfinal
 
 client = MongoClient(os.getenv('MONGODB_URI'), tlsCAFile=certifi.where())
 db = client.get_database('pythonfinal')
-records = db.users
+users = db.users
+accessories = db.accessories
+computers = db.computers
+consoles = db.game_consoles
+games = db.video_games
+monitors = db.monitors
 
 # class Base(DeclarativeBase):
 #     pass
@@ -45,67 +47,57 @@ def home():
 
 @app.route('/games')
 def games():
-    with open("./static/json/products.json") as data_file:
-        data = json.load(data_file)
-        game_row = data["products"]["video_games"]
-        game_name_list = []
-        game_description_list = []
-        game_image_list = []
-        game_alt_list = []
-        row(game_row, game_name_list, game_description_list, game_image_list, game_alt_list)
-        count = len(game_name_list)
+    game_row = list(db.games.find({}))
+    game_name_list = []
+    game_description_list = []
+    game_image_list = []
+    game_alt_list = []
+    row(game_row, game_name_list, game_description_list, game_image_list, game_alt_list)
+    count = len(game_name_list)
     return render_template("games.html", game_name_list = game_name_list, game_description_list = game_description_list, game_image_list = game_image_list, game_alt_list = game_alt_list, count = count)
 
 @app.route('/consoles')
 def consoles():
-    with open("./static/json/products.json") as data_file:
-        data = json.load(data_file)
-        console_row = data["products"]["game_consoles"]
-        console_name_list = []
-        console_description_list = []
-        console_image_list = []
-        console_alt_list = []
-        row(console_row, console_name_list, console_description_list, console_image_list, console_alt_list)
-        count = len(console_name_list)
+    console_row = list(db.consoles.find({}))
+    console_name_list = []
+    console_description_list = []
+    console_image_list = []
+    console_alt_list = []
+    row(console_row, console_name_list, console_description_list, console_image_list, console_alt_list)
+    count = len(console_name_list)
     return render_template("consoles.html", console_name_list = console_name_list, console_description_list = console_description_list, console_image_list = console_image_list, console_alt_list = console_alt_list, count = count)
 
 @app.route('/accessories')
 def accessories():
-    with open("./static/json/products.json") as data_file:
-        data = json.load(data_file)
-        accessories_row = data["products"]["accessories"]
-        accessories_name_list = []
-        accessories_description_list = []
-        accessories_image_list = []
-        accessories_alt_list = []
-        row(accessories_row, accessories_name_list, accessories_description_list, accessories_image_list, accessories_alt_list)
-        count = len(accessories_name_list)
+    accessories_row = list(db.accessories.find({}))
+    accessories_name_list = []
+    accessories_description_list = []
+    accessories_image_list = []
+    accessories_alt_list = []
+    row(accessories_row, accessories_name_list, accessories_description_list, accessories_image_list, accessories_alt_list)
+    count = len(accessories_name_list)
     return render_template("accessories.html", accessories_name_list = accessories_name_list, accessories_description_list = accessories_description_list, accessories_image_list = accessories_image_list, accessories_alt_list = accessories_alt_list, count = count)
 
 @app.route('/computers')
 def computers():
-    with open("./static/json/products.json") as data_file:
-        data = json.load(data_file)
-        computer_row = data["products"]["computers"]
-        computer_name_list = []
-        computer_description_list = []
-        computer_image_list = []
-        computer_alt_list = []
-        row(computer_row, computer_name_list, computer_description_list, computer_image_list, computer_alt_list)
-        count = len(computer_name_list)
+    computer_row = list(db.computers.find({}))
+    computer_name_list = []
+    computer_description_list = []
+    computer_image_list = []
+    computer_alt_list = []
+    row(computer_row, computer_name_list, computer_description_list, computer_image_list, computer_alt_list)
+    count = len(computer_name_list)
     return render_template("computers.html", computer_name_list = computer_name_list, computer_description_list = computer_description_list, computer_image_list = computer_image_list, computer_alt_list = computer_alt_list, count = count)
 
 @app.route('/monitors')
 def monitors():
-    with open("./static/json/products.json") as data_file:
-        data = json.load(data_file)
-        monitors_row = data["products"]["monitors"]
-        monitor_name_list = []
-        monitor_description_list = []
-        monitor_image_list = []
-        monitor_alt_list = []
-        row(monitors_row, monitor_name_list, monitor_description_list, monitor_image_list, monitor_alt_list)
-        count = len(monitor_name_list)
+    monitors_row = list(db.monitors.find({}))
+    monitor_name_list = []
+    monitor_description_list = []
+    monitor_image_list = []
+    monitor_alt_list = []
+    row(monitors_row, monitor_name_list, monitor_description_list, monitor_image_list, monitor_alt_list)
+    count = len(monitor_name_list)
     return render_template("monitors.html", monitor_name_list = monitor_name_list, monitor_description_list = monitor_description_list, monitor_image_list = monitor_image_list, monitor_alt_list = monitor_alt_list, count = count)
 
 
@@ -120,7 +112,7 @@ def login():
         password = request.form.get("password")
 
         #check if email exists in database
-        email_found = records.find_one({"email": email})
+        email_found = users.find_one({"email": email})
         if email_found:
             email_val = email_found['email']
             passwordcheck = email_found['password']
@@ -166,7 +158,7 @@ def register():
         email = request.form.get("email")
         password = request.form.get("password")
 
-        email_found = records.find_one({"email": email})
+        email_found = users.find_one({"email": email})
         if email_found:
             message = "This email already exists in database"
             return render_template('register.html', message=message)
@@ -174,9 +166,9 @@ def register():
             hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
             user_input = {'email': email, 'password': hashed}
-            records.insert_one(user_input)
+            users.insert_one(user_input)
 
-            user_data = records.find_one({"email": email})
+            user_data = users.find_one({"email": email})
             new_email = user_data['email']
             return redirect(url_for('admin'))
 
@@ -213,23 +205,21 @@ def row(row_list, name, description, image, alt):
 @app.route('/admin')
 def admin():
     if "email" in session:
-        with open("./static/json/products.json") as data_file:
-            data = json.load(data_file)
-            accessories_row = data["products"]["accessories"]
-            consoles_row = data["products"]["game_consoles"]
-            computers_row = data["products"]["computers"]
-            games_row = data["products"]["video_games"]
-            monitors_row = data["products"]["monitors"]
-            name_list = []
-            description_list = []
-            image_list = []
-            alt_list = []
-            row(accessories_row, name_list, description_list, image_list, alt_list)
-            row(consoles_row, name_list, description_list, image_list, alt_list)
-            row(computers_row, name_list, description_list, image_list, alt_list)
-            row(games_row, name_list, description_list, image_list, alt_list)
-            row(monitors_row, name_list, description_list, image_list, alt_list)
-            count = len(name_list)
+        accessories_row = list(db.accessories.find({}))
+        consoles_row = list(db.consoles.find({}))
+        computers_row = list(db.computers.find({}))
+        games_row = list(db.games.find({}))
+        monitors_row = list(db.monitors.find({}))
+        name_list = []
+        description_list = []
+        image_list = []
+        alt_list = []
+        row(accessories_row, name_list, description_list, image_list, alt_list)
+        row(consoles_row, name_list, description_list, image_list, alt_list)
+        row(computers_row, name_list, description_list, image_list, alt_list)
+        row(games_row, name_list, description_list, image_list, alt_list)
+        row(monitors_row, name_list, description_list, image_list, alt_list)
+        count = len(name_list)
         return render_template("admin.html", name_list = name_list, description_list = description_list, image_list = image_list, alt_list = alt_list, count = count, logged_in=True)
     else:
         return redirect(url_for("login"))
