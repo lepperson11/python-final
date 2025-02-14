@@ -2,10 +2,11 @@
 <div class="container sign-in d-flex justify-content-center align-items-center">
   <form method="post">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-    {% with messages = get_flashed_messages() %} {% if messages %} {% for
-    message in messages %}
-    <p class="flash">{{ message }}</p>
-    {% endfor %} {% endif %} {% endwith %}
+    {% if message %}
+    <div class="alert alert-secondary" role="alert">
+      <p>{{ message }}</p>
+    </div>
+    {% endif %}
     <div class="form-floating mb-2">
       <input
         type="email"
