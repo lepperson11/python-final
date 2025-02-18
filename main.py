@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect, session
+from flask import Flask, render_template, request, url_for, redirect, session, abort
 from bson import ObjectId
 from pymongo import MongoClient
 import bcrypt
@@ -19,27 +19,6 @@ computersdb = db.computers
 consolesdb = db.consoles
 gamesdb = db.games
 monitorsdb = db.monitors
-
-# class Base(DeclarativeBase):
-#     pass
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
-# db = SQLAlchemy(model_class=Base)
-# db.init_app(app)
-
-# login_manager = LoginManager()
-# login_manager.init_app(app)
-
-# @login_manager.user_loader
-# def load_user(user_id):
-#     return db.get_or_404(User, user_id)
-
-# class User(UserMixin, db.Model):
-#     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-#     email: Mapped[str] = mapped_column(String(100), unique=True)
-#     password: Mapped[str] = mapped_column(String(100))
-
-# with app.app_context():
-#     db.create_all()
 
 @app.route('/')
 def home():
@@ -121,12 +100,10 @@ def login():
         email = request.form.get("email")
         password = request.form.get("password")
 
-        #check if email exists in database
         email_found = users.find_one({"email": email})
         if email_found:
             email_val = email_found['email']
             passwordcheck = email_found['password']
-            #encode the password and check if it matches
             if bcrypt.checkpw(password.encode('utf-8'), passwordcheck):
                 session["email"] = email_val
                 return redirect(url_for('admin'))
@@ -138,22 +115,6 @@ def login():
         else:
             message = 'Email not found'
             return render_template('login.html', message=message)
-    # if request.method == "POST":
-    #     email = request.form.get('email')
-    #     password = request.form.get('password')
-
-    #     result = db.session.execute(db.select(User).where(User.email == email))
-    #     user = result.scalar()
-
-    #     if not user:
-    #         flash("The email or password is incorrect or does not exist")
-    #         return redirect(url_for('login'))
-    #     elif not check_password_hash(user.password, password):
-    #         flash("The email or password is incorrect or does not exist")
-    #         return redirect(url_for('login'))
-    #     else:
-    #         login_user(user)
-    #         return redirect(url_for('admin'))
 
     return render_template("login.html", message = message)
 
@@ -178,27 +139,6 @@ def register():
             user_input = {'email': email, 'password': hashed}
             users.insert_one(user_input)
             return redirect(url_for('admin'))
-
-    # if request.method == "POST":
-    #     email = request.form.get('email')
-    #     result = db.session.execute(db.select(User).where(User.email == email))
-    #     user = result.scalar()
-    #     if user:
-    #         flash("You already have an account with that email, use log in instead!")
-    #         return redirect(url_for('login'))
-    #     hash_salt_pass = generate_password_hash(request.form.get('password'), method="pbkdf2:sha256", salt_length=9)
-    #     new_user = User(
-    #         email=request.form.get('email'),
-    #         password=hash_salt_pass
-    #     )
-        
-    #     db.session.add(new_user)
-    #     db.session.commit()
-
-    #     login_user(new_user)
-        
-    #     return redirect(url_for("admin"))
-
     return render_template("register.html")
 
 def row(row_list, name, description, image, alt, _id, type_):
@@ -211,7 +151,7 @@ def row(row_list, name, description, image, alt, _id, type_):
             type_.append(row["type"])
     return name, description, image, alt, _id, type_
 
-@app.route('/admin', methods=["GET", "POST"])
+@app.route('/admin', methods=["GET", "POST", "DELETE"])
 def admin():
     if "email" in session:
         accessories_row = list(db.accessories.find({}))
@@ -232,41 +172,62 @@ def admin():
         row(monitors_row, name_list, description_list, image_list, alt_list, id_list, type_list)
         count = len(name_list)
         if request.method == "POST":
-            return edit(request.form.get("edit_submit"), name_list, description_list, id_list, image_list, alt_list, type_list)
-        return render_template("admin.html", name_list = name_list, description_list = description_list, image_list = image_list, alt_list = alt_list, id_list = id_list, count = count, logged_in=True)
+            image = ""
+            alt = ""
+            type_ = ""
+            _id = request.form.get("_id")
+            count = 0
+            for i in id_list:
+                if str(_id) == str(i):
+                    image = image_list[count]
+                    alt = alt_list[count]
+                    type_ = type_list[count]
+                count += 1
+
+            new_name = request.form.get("name")
+            new_description = request.form.get("description")
+
+            query = {"_id": ObjectId(_id)}
+            update_fields = {
+                'image': image,
+                'alt': alt,
+                'name': new_name,
+                'description':  new_description,
+                'type': type_
+            }
+            if type_ == "games":
+                gamesdb.update_one(query, {"$set": update_fields}, upsert=True)
+            elif type_ == "consoles":
+                consolesdb.update_one(query, {"$set": update_fields}, upsert=True)
+            elif type_ == "accessories":
+                accessoriesdb.update_one(query, {"$set": update_fields}, upsert=True)
+            elif type_ == "computers":
+                computersdb.update_one(query, {"$set": update_fields}, upsert=True)
+            elif type_ == "monitors":
+                monitorsdb.update_one(query, {"$set": update_fields}, upsert=True)
+        return render_template("admin.html", name_list = name_list, description_list = description_list, image_list = image_list, alt_list = alt_list, id_list = id_list, type_list = type_list,count = count, logged_in=True)
     else:
         return redirect(url_for("login"))
     
-@app.route('/edit', methods=["GET", "POST"])
-def edit(_id, name_list, description_list, id_list, image_list, alt_list, type_list):
-    
-    name = ""
-    description = ""
-    image = ""
-    alt = ""
+@app.route('/delete', methods=['POST'])
+def delete_product():
+    print("test")
     type_ = ""
-    count = 0
-    for row in id_list:
-        if str(_id) == str(row):
-            name = name_list[count]
-            description = description_list[count]
-            image = image_list[count]
-            alt = alt_list[count]
-            type_ = type_list[count]
-        count += 1
-    
-    if request.method == "POST":
-        new_name = request.form.get("name")
-        new_description = request.form.get("description")
-
-        query = {"_id": ObjectId(_id)}
-        product_input = {'_id': _id, 'image': image, 'alt': alt, 'name': new_name, 'description': new_description, 'type': type_}
-        if type_ == "games":
-            gamesdb.update_one(query, {"$set":{'image': image, 'alt': alt, 'name': new_name, 'description': new_description, 'type': type_}}, upsert=True)
-
-        # return redirect(url_for('admin'))
-    
-    return render_template("edit.html", name = name, description = description)
+    _id = request.form.get("_id")
+    type_ = request.form.get("type_")
+    print(type_)
+    query = {"_id": ObjectId(_id)}
+    if type_ == "games":
+        gamesdb.delete_one(query)
+    elif type_ == "consoles":
+        consolesdb.delete_one(query)
+    elif type_ == "accessories":
+        accessoriesdb.delete_one(query)
+    elif type_ == "computers":
+        computersdb.delete_one(query)
+    elif type_ == "monitors":
+        monitorsdb.delete_one(query)
+    return render_template("/index.html")
 
 @app.route('/logout', methods=["POST", "GET"])
 def logout():
