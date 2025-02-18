@@ -211,11 +211,9 @@ def admin():
     
 @app.route('/delete', methods=['POST'])
 def delete_product():
-    print("test")
     type_ = ""
     _id = request.form.get("_id")
     type_ = request.form.get("type_")
-    print(type_)
     query = {"_id": ObjectId(_id)}
     if type_ == "games":
         gamesdb.delete_one(query)
